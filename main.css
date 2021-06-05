@@ -1,0 +1,22 @@
+#working-area{
+    margin:100px auto 200px auto;
+
+}
+#question{
+    margin: 50px auto;
+}
+#question td{
+    background-color: grey;
+}
+table{
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: rgb(212, 245, 146);
+}
+table td{
+    border: 2px solid rgb(0, 0, 0);
+    padding: 20px;
+    background-color: rgb(70, 69, 69);
+    border-radius: 10px;
+}
