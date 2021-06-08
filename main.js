@@ -3,6 +3,7 @@
         var b;
         
     function my(){
+        var Music= new Audio("valorant-ringtone.mp3");
         var restart=document.getElementById("rest");
         restart.addEventListener('click',()=>{
             location.reload();
@@ -50,10 +51,9 @@
                     index=index-5;
                     b=arr[index];
                     if(check(arr,element)){
-                        alert("Congratulations You have won the game!");
-                        var reload=prompt("Restart immediately?\nYes->1 No->0")
-                        if(reload)
-                        {location.reload();}
+                        alert("Congratulations You have won the game!\nYour Score is: "+(score+1));
+                        Music.play();
+                       
                     }
                     score++;
                     scoring.innerHTML=score;
@@ -65,11 +65,9 @@
                     index=index+5;
                     b=arr[index];
                     if(check(arr,element)){
-                        alert("Congratulations You have won the game!");
+                        alert("Congratulations You have won the game!\nYour Score is: "+(score+1));
+                        Music.play();
                         
-                        var reload=prompt("Restart immediately?\nYes->1 No->0")
-                        if(reload)
-                        {location.reload();}
                     }
                     score++;
                     scoring.innerHTML=score;
@@ -82,10 +80,9 @@
                     index=index-1;
                     b=arr[index];
                     if(check(arr,element)){
-                        alert("Congratulations You have won the game!");
-                        var reload=prompt("Restart immediately?\nYes->1 No->0")
-                        if(reload)
-                        {location.reload();}
+                        alert("Congratulations You have won the game!\nYour Score is: "+(score+1));
+                        Music.play();
+                       
                     }
                     score++;
                     scoring.innerHTML=score;}
@@ -98,10 +95,9 @@
                     index=index+1;
                     b=arr[index];
                     if(check(arr,element)){
-                        alert("Congratulations You have won the game!");
-                        var reload=prompt("Restart immediately?\nYes->1 No->0")
-                        if(reload)
-                        {location.reload();}
+                        alert("Congratulations You have won the game!\nYour Score is: "+(score+1));
+                      Music.play();
+                        
                     }
                     score++;
                     scoring.innerHTML=score;}
