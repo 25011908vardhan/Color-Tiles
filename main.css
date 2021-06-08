@@ -1,6 +1,7 @@
 #working-area{
-    margin:100px auto 200px auto;
-
+    margin:30px auto 0px auto;
+    /* display: inline-block; */
+    
 }
 #question{
     margin: 50px auto;
@@ -19,4 +20,30 @@ table td{
     padding: 20px;
     background-color: rgb(70, 69, 69);
     border-radius: 10px;
+}
+
+.btn{
+   width: 10%;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    margin-right: 10px;
+    font-size: 20px;
+    background-color: rgb(182, 151, 255);
+}
+.btn:hover{
+    background-color:rgb(163, 100, 199) ;
+}
+.controller{
+    margin-top: 10px;
+   text-align: center;
+    
+}
+#btn-u{
+    display: block;
+    margin:30px auto 10px auto;
+}
+#btn-d{
+    display: block;
+    margin:10px auto 10px auto;
 }

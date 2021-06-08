@@ -31,183 +31,91 @@
             
         }
         arr[uniqRand[24]].style.backgroundColor="grey";
-        
-        
-        
-        
         index=uniqRand[24];
         b= arr[index];
         console.log(b);
+        var left= document.getElementById("btn-l");
+        var up= document.getElementById("btn-u");
+        var right= document.getElementById("btn-r");
+        var down= document.getElementById("btn-d");
+        up.addEventListener('click',()=>{
+            b.style.backgroundColor=arr[index-5].style.backgroundColor;
+                    arr[index-5].style.backgroundColor="grey";
+                    index=index-5;
+                    b=arr[index];
+                    if(check(arr,element)){
+                        alert("Congratulations You have won the game!");
+                       location.reload();
+                    }
+        })
+       down.addEventListener('click',()=>{
+        if((index+5)<25)
+           { b.style.backgroundColor=arr[index+5].style.backgroundColor;
+                    arr[index+5].style.backgroundColor="grey";
+                    index=index+5;
+                    b=arr[index];
+                    if(check(arr,element)){
+                        alert("Congratulations You have won the game!");
+                        location.reload();
+                    }}
+        })
+        left.addEventListener('click',()=>{
+            if((index-1)!=4 && (index-1)!=9 && (index-1)!=14 && (index-1)!=19 && (index-1)!=24)
+            {b.style.backgroundColor=arr[index-1].style.backgroundColor;
+                    arr[index-1].style.backgroundColor="grey";
+                    index=index-1;
+                    b=arr[index];
+                    if(check(arr,element)){
+                        alert("Congratulations You have won the game!");
+                        location.reload();
+                    }}
 
-        var win=0;
-        //    while()
-        //   {  
-            
-            arr[index-5].addEventListener('click',()=>
+        })
+        right.addEventListener('click',()=>{
+            if((index+1)%5!=0)
+            {b.style.backgroundColor=arr[index+1].style.backgroundColor;
+                    arr[index+1].style.backgroundColor="grey";
+                    index=index+1;
+                    b=arr[index];
+                    if(check(arr,element)){
+                        alert("Congratulations You have won the game!");
+                        location.reload();
+                    }}
+        })
+                                                
+}
+function getRanArr(length) {
+         let arr = [];
+         do {
+            let ran = Math.floor(Math.random() * length); 
+            // console.log(ran);
+            arr = arr.indexOf(ran) > -1 ? arr : arr.concat(ran);
+        }while (arr.length < length)
+                                                
+        return arr;
+    }
+    function check(a,b)
+    {
+        for(var i=0;i<9;i++){
+
+            if(i<3){
+                k=0;
+            }
+            else if(i>2&&i<6)
             {
-                b.style.backgroundColor=arr[index-5].style.backgroundColor;
-                arr[index-5].style.backgroundColor="grey";
-                index=index-5;
-                b=arr[index];
-                //   win=check(ans,arr);
-            },false);
-
-            arr[index-1].addEventListener('click',()=>
+                k=2;
+            }
+            else
             {
-                if((index-1)!=4 && (index-1)!=9 && (index-1)!=14 && (index-1)!=19 && (index-1)!=24)
-                {b.style.backgroundColor=arr[index-1].style.backgroundColor;
-                arr[index-1].style.backgroundColor="grey";
-                index=index-1;
-                b=arr[index];}
-                //   win=check(ans,arr);
-            },false);
-
-            arr[index+1].addEventListener('click',()=>
+                k=4;
+            }
+            if(b[i].style.backgroundColor!=a[i+6+k].style.backgroundColor)
             {
-                if((index+1)%5!=0)
-                {b.style.backgroundColor=arr[index+1].style.backgroundColor;
-                arr[index+1].style.backgroundColor="grey";
-                index=index+1;
-                b=arr[index];
-                console.log(index)
-                console.log(b);}
-                //   win=check(ans,arr);
-            },false);
-
-            arr[index+5].addEventListener('click',()=>
-            {
-                if((index+5)<25)
-                {b.style.backgroundColor=arr[index+5].style.backgroundColor;
-                arr[index+5].style.backgroundColor="grey";
-                index=index+5;
-                b=arr[index];}
-                //   win=check(ans,arr);
-            },false);
-
-            // else if(click(arr[index-1] && ((index-1)!= 4 && (index-1)!= 9 &&(index-1)!= 14 &&(index-1) != 19 && (index-1)!= 24)))
-            // {
-            //     b.style.backgroundColor=arr[index-1].style.backgroundColor;
-            //     arr[index-1].style.backgroundColor="grey";
-            //     index=index-1;
-            //     b=arr[index];
-            // }
-            // else if(click(arr[index+1]) && (index+1)%5!=0)
-            // {
-            //     b.style.backgroundColor=arr[index+1].style.backgroundColor;
-            //     arr[index+1].style.backgroundColor="grey";
-            //     index=index+1;
-            //     b=arr[index];
-            // }
-            // else if(click(arr[index+5]))
-            // {
-            //     b.style.backgroundColor=arr[index+5].style.backgroundColor;
-            //     arr[index+5].style.backgroundColor="grey";
-            //     index=index+5;
-            //     b=arr[index];
-            // }
-
-
-            // }
-            //   if()
-            
-            
-            //   while(win!=1)
-            //   {
-                
-                
-                //     if((index-5)>=0)
-                // {
-                    //     var a=arr[index-5];
-                    //     console.log(a);
-                    //     a.addEventListener('click',()=>{
-                        
-                        //      b.style.backgroundColor=a.style.backgroundColor;
-                        //      a.style.backgroundColor="rgb(70, 69, 69)";
-                        //      index=index-5;
-                        //      b=arr[index];
-                        //      console.log(b);
-                        //     //  win = check(arr,ans);
-                        //     //  continue;
-                        //     },false);
-                        // }
-                        //     else if((index-1)>=0 && (index-1)!= 4 && (index-1)!= 9 &&(index-1)!= 14 &&(index-1) != 19 && (index-1)!= 24)
-                        // {
-                            //      var m=arr[index-1];
-                            //     console.log(m);
-                            //     m.addEventListener('click',()=>{
-                                
-                                //      b.style.backgroundColor=m.style.backgroundColor;
-                                //      m.style.backgroundColor="rgb(70, 69, 69)";
-                                //      index=index-1;
-                                //      b=arr[index];
-                                //      console.log(b);
-                                //     //  win=check(arr,ans);
-                                //     //  continue;
-                                //     },false);
-                                // }
-                                // else if((index+1)<25 && ((index+1)%5!=0))
-                                // {
-                                    //      var n=arr[index+1];
-                                    //     console.log(n);
-                                    //     n.addEventListener('click',()=>{
-                                        
-                                        //      b.style.backgroundColor=n.style.backgroundColor;
-                                        //      n.style.backgroundColor="rgb(70, 69, 69)";
-                                        //      index=index+1;
-                                        //      b=arr[index];
-                                        //      console.log(b);
-                                        //     //  win=check(arr,ans);
-                                        //     //  continue;
-                                        //     },false);
-                                        // }
-                                        // // else if((index+5)<25)
-                                        // else
-                                        // {
-                                            //      var p=arr[index+5];
-                                            //     console.log(p);
-                                            //     p.addEventListener('click',()=>{
-                                                
-                                                //      b.style.backgroundColor=p.style.backgroundColor;
-                                                //      p.style.backgroundColor="rgb(70, 69, 69)";
-                                                //     index=index+5;
-                                                //     b=arr[index];
-                                                //     console.log(b);
-                                                //     // win=check(arr,ans);
-                                                //     // continue;
-                                                //     },false);
-                                                // }
-                                                
-                                                
-                                                // }
-                                                
-                                                
-                                            }
-                                            function getRanArr(length) {
-                                                let arr = [];
-                                                do {
-                                                    let ran = Math.floor(Math.random() * length); 
-                                                    // console.log(ran);
-                                                    arr = arr.indexOf(ran) > -1 ? arr : arr.concat(ran);
-                                                }while (arr.length < length)
-                                                
-                                                return arr;
-                                            }
-                                            function check(a,b)
-                                            {
-                                                for(var i=0;i<9;i++){
-                                                    if(a[i]!=b[i]){
-                                                        return 0;
-                                                    }
-                                                }
-                                                return 1;
-                                            }
-                                            function click(l)
-                                            {
-                                                   l.addEventListener('click',() =>{
-                                                       return 1;
-                                                   },false);
-                                            }
-
+                return 0;
+            }
+        }
+        return 1;
+    }
 
 // 13.4->22,(ans me - aayega)
 // 14.4-> all wrong
