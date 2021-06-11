@@ -1,9 +1,9 @@
 
         var index;
         var b;
+        var Music= new Audio("valorant-ringtone.mp3");
         
     function my(){
-        var Music= new Audio("valorant-ringtone.mp3");
         var restart=document.getElementById("rest");
         restart.addEventListener('click',()=>{
             location.reload();
@@ -12,7 +12,7 @@
         var scoring=document.getElementById('score');
         var arr= document.getElementsByClassName("work");
         console.log(arr);   
-        var colors=["#FDF200","#08F7FE","#00FF7F","#FFA500","#FFFFFF","#FF2281"];
+        var colors=["#FDF200","#08F7FE","#00FF7F","#FFA500","#FFFFFF","#DE1738"];
         console.log("Hello there!");
         
         var element= document.getElementsByClassName("ques");
@@ -36,7 +36,7 @@
             arr[uniqRand[j]].style.backgroundColor=colors[Math.floor(Math.random() * 6)];
             
         }
-        var score=0;
+        var score=0
         arr[uniqRand[24]].style.backgroundColor="black";
         index=uniqRand[24];
         b= arr[index];
@@ -45,14 +45,14 @@
         var up= document.getElementById("btn-u");
         var right= document.getElementById("btn-r");
         var down= document.getElementById("btn-d");
+
         up.addEventListener('click',()=>{
             b.style.backgroundColor=arr[index-5].style.backgroundColor;
                     arr[index-5].style.backgroundColor="black";
                     index=index-5;
                     b=arr[index];
                     if(check(arr,element)){
-                        alert("Congratulations You have won the game!\nYour Score is: "+(score+1));
-                        Music.play();
+                        celebrate(arr,score);
                        
                     }
                     score++;
@@ -65,8 +65,7 @@
                     index=index+5;
                     b=arr[index];
                     if(check(arr,element)){
-                        alert("Congratulations You have won the game!\nYour Score is: "+(score+1));
-                        Music.play();
+                        celebrate(arr,score);
                         
                     }
                     score++;
@@ -80,8 +79,8 @@
                     index=index-1;
                     b=arr[index];
                     if(check(arr,element)){
-                        alert("Congratulations You have won the game!\nYour Score is: "+(score+1));
-                        Music.play();
+                        celebrate(arr,score);
+                        
                        
                     }
                     score++;
@@ -95,8 +94,7 @@
                     index=index+1;
                     b=arr[index];
                     if(check(arr,element)){
-                        alert("Congratulations You have won the game!\nYour Score is: "+(score+1));
-                      Music.play();
+                        celebrate(arr,score);
                         
                     }
                     score++;
@@ -136,6 +134,20 @@ function getRanArr(length) {
         }
         return 1;
     }
+function celebrate(arr,score)
+{
+    alert("Congratulations You have won the game!\nYour Score is: "+(score+1));
+    Music.play();
+    for(i=0;i<5;i++)
+    {
+        arr[i].style.backgroundColor="grey";
+        arr[20+i].style.backgroundColor="grey";
+    }
+    for(i=5;i<=15;i+=5)
+    {
+        arr[i].style.backgroundColor="grey";
+        arr[i+4].style.backgroundColor="grey";
+    }
 
-// 13.4->22,(ans me - aayega)
-// 14.4-> all wrong
+
+}
