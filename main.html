@@ -10,12 +10,19 @@
 <script src="main.js"></script>
 <body>
     
-    <div class="scorings">
-        <div class="title">Score:</div>
-        <div id="score">0</div>
+    <div class="timer">
+        Time:
+        <span id="time_running">00:00</span>
     </div>
-    <div class="restart">
-        <input type="button" id="rest" value="RESTART">
+    <div class="fun">
+
+        <div class="scorings">
+            <div class="title">Score:</div>
+            <div id="score">0</div>
+        </div>
+        <div class="restart">
+            <input type="button" id="rest" value="RESTART">
+        </div>
     </div>
     <div class="container">
         
@@ -77,8 +84,8 @@
             </div>
             <div class="cont2">
                 
-                    <div class="controller">
-                        <input type="button" value="ᐃ" id="btn-u" class="btn">
+                <div class="controller" id="contr">
+                    <input type="button" value="ᐃ" id="btn-u" class="btn">
                         <br>
                         <input type="button" value="ᐊ" id="btn-l" class="btn">
                         <input type="button" value="   " id="circle" class="btn">
@@ -86,12 +93,12 @@
                         <br>
                         <input type="button" value="ᐁ" id="btn-d" class="btn">
                     </div>
-
-            </div>
+                    
+                </div>
                 
-
-    
-        </div>
-    <script>my()</script>
-</body>
+                
+                
+            </div>
+        </body>
+        <script>my()</script>
 </html>

@@ -2,8 +2,14 @@
         var index;
         var b;
         var Music= new Audio("valorant-ringtone.mp3");
-        
-    function my(){
+        var switch_music= new Audio("switch_sound.wav");
+        var min=0;
+        var seconds=0;
+        var stop=0;
+        var time_taken;
+        var stop_timer;
+        function my(){
+        var timer_time= document.getElementById('time_running');
         var restart=document.getElementById("rest");
         restart.addEventListener('click',()=>{
             location.reload();
@@ -45,18 +51,37 @@
         var up= document.getElementById("btn-u");
         var right= document.getElementById("btn-r");
         var down= document.getElementById("btn-d");
+        
+        
+        var to_start_timer= document.getElementById('contr');
+        to_start_timer.addEventListener('click',()=>{
+            stop_timer= setInterval(()=>{
+                if(seconds==59)
+                {
+                    min++;
+                    seconds=0;
+                }
+                seconds++;
+                seconds=(seconds<10)? "0"+seconds : seconds; 
+                time_taken=min+":"+seconds
+                timer_time.innerHTML= time_taken;
+            },1000);
+        },{once:true});
 
+        
         up.addEventListener('click',()=>{
             b.style.backgroundColor=arr[index-5].style.backgroundColor;
-                    arr[index-5].style.backgroundColor="black";
-                    index=index-5;
-                    b=arr[index];
+            arr[index-5].style.backgroundColor="black";
+            index=index-5;
+            b=arr[index];
+            switch_music.play();
+            switch_music.playbackRate=10;
                     if(check(arr,element)){
                         celebrate(arr,score);
-                       
                     }
                     score++;
                     scoring.innerHTML=score;
+                    
         })
        down.addEventListener('click',()=>{
         if((index+5)<25)
@@ -64,9 +89,11 @@
                     arr[index+5].style.backgroundColor="black";
                     index=index+5;
                     b=arr[index];
+                    switch_music.play();
+            switch_music.playbackRate=10;
                     if(check(arr,element)){
                         celebrate(arr,score);
-                        
+                        clearInterval(timer_time,1000);
                     }
                     score++;
                     scoring.innerHTML=score;
@@ -78,10 +105,10 @@
                     arr[index-1].style.backgroundColor="black";
                     index=index-1;
                     b=arr[index];
+                    switch_music.play();
+            switch_music.playbackRate=10;
                     if(check(arr,element)){
                         celebrate(arr,score);
-                        
-                       
                     }
                     score++;
                     scoring.innerHTML=score;}
@@ -93,9 +120,10 @@
                     arr[index+1].style.backgroundColor="black";
                     index=index+1;
                     b=arr[index];
+                    switch_music.play();
+            switch_music.playbackRate=10;
                     if(check(arr,element)){
                         celebrate(arr,score);
-                        
                     }
                     score++;
                     scoring.innerHTML=score;}
@@ -136,7 +164,7 @@ function getRanArr(length) {
     }
 function celebrate(arr,score)
 {
-    alert("Congratulations You have won the game!\nYour Score is: "+(score+1));
+    alert("Congratulations You have won the game!\nYour Score is: "+(score+1)+"\nTime Taken: "+time_taken);
     Music.play();
     for(i=0;i<5;i++)
     {
@@ -147,7 +175,8 @@ function celebrate(arr,score)
     {
         arr[i].style.backgroundColor="grey";
         arr[i+4].style.backgroundColor="grey";
-    }
+ }
+   clearInterval(stop_timer);
 
-
+   
 }
