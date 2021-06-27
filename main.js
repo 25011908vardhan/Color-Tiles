@@ -185,11 +185,12 @@
                 Name="Anon";
                 highscore=[Name,score+1,time_taken];
                 localStorage.setItem("HighScore",JSON.stringify(highscore));
-                document.getElementById('HS').innerHTML=(JSON.parse(localStorage.getItem("HighScore")))[1];
+                document.getElementById('HS').innerHTML=(JSON.parse(localStorage.getItem("HighScore")))[0]+":"+(JSON.parse(localStorage.getItem("HighScore")))[1];
             }
             else
             {
             alert("Congratulations You have won the game!\nYour Score is: "+(score+1)+"\nTime Taken: "+time_taken);
+            document.getElementById('HS').innerHTML=(JSON.parse(localStorage.getItem("HighScore")))[0]+":"+(JSON.parse(localStorage.getItem("HighScore")))[1];
             }
             
             
