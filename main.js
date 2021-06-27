@@ -14,12 +14,13 @@
             if(localStorage.getItem("highScore")==null){
                 highscore=["",0,00+":"+00];
                 localStorage.setItem("HighScore",JSON.stringify(highscore));
+                document.getElementById('HS').innerHTML=(JSON.parse(localStorage.getItem("HighScore")))[1];
             }
             else
             { localStorage.setItem("HighScore",JSON.stringify(highscore));
-                document.getElementById('HS').innerHTML=(JSON.parse(localStorage.getItem("HighScore")))[1];}
             
             document.getElementById('HS').innerHTML=(JSON.parse(localStorage.getItem("HighScore")))[0]+":"+(JSON.parse(localStorage.getItem("HighScore")))[1];
+            }
             var timer_time= document.getElementById('time_running');
             var restart=document.getElementById("rest");
             restart.addEventListener('click',()=>{
@@ -189,8 +190,8 @@
             }
             else
             {
-            alert("Congratulations You have won the game!\nYour Score is: "+(score+1)+"\nTime Taken: "+time_taken);
             document.getElementById('HS').innerHTML=(JSON.parse(localStorage.getItem("HighScore")))[0]+":"+(JSON.parse(localStorage.getItem("HighScore")))[1];
+            alert("Congratulations You have won the game!\nYour Score is: "+(score+1)+"\nTime Taken: "+time_taken);
             }
             
             
