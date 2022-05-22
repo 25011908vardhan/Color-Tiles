@@ -7,5 +7,5 @@
 ⏳  Timer will be shown on the screen. Make sure to complete it fast⚡<br/>
 🔃  You can click on Restart button to get a fresh new pattern to solve instantly.<br/>
 🏆  You will be prompted to enter your name on making a new HighScore!<br/>
-🎉  Have Fun and make sure to make an unbeatable score before you leave :)
+🎉  Have Fun and make sure to make an unbeatable score before you leave :)<br/>
 🌟  Neat and clean UI with Responsive Design 😄
